@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1152</width>
+    <height>858</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Object Tracker</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/icon.ico</normaloff>images/icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="videoStream">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>39</y>
+      <width>1110</width>
+      <height>560</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+image: url(:/cam.jpg);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Number Of Targets:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="numOfTargets">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>9</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Tracker:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="trackerType">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>8</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>FPS:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fps">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>9</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>20</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="outputConsole">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>620</y>
+      <width>1111</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1152</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCamera">
+    <property name="title">
+     <string>Cam</string>
+    </property>
+    <addaction name="record"/>
+    <addaction name="stopRecording"/>
+    <addaction name="clearCam"/>
+   </widget>
+   <widget class="QMenu" name="menuPlayer">
+    <property name="title">
+     <string>Player</string>
+    </property>
+    <addaction name="openVideoPlayer"/>
+   </widget>
+   <widget class="QMenu" name="menuTracker">
+    <property name="title">
+     <string>Tracker</string>
+    </property>
+    <addaction name="selectTargets"/>
+    <addaction name="saveResults"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="about"/>
+   </widget>
+   <addaction name="menuCamera"/>
+   <addaction name="menuTracker"/>
+   <addaction name="menuPlayer"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="openCam">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/cam.jpg</normaloff>images/cam.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Open Cam</string>
+   </property>
+  </action>
+  <action name="openVideoPlayer">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/video_player.ico</normaloff>images/video_player.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Open Video Player</string>
+   </property>
+  </action>
+  <action name="stopRecording">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/stop.png</normaloff>images/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop Rec</string>
+   </property>
+  </action>
+  <action name="resume">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/run.png</normaloff>images/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Resume</string>
+   </property>
+  </action>
+  <action name="closeCam">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/stop.png</normaloff>images/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close Cam</string>
+   </property>
+  </action>
+  <action name="about">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/Info_Icon.png</normaloff>images/Info_Icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="record">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/record.jpg</normaloff>images/record.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Rec</string>
+   </property>
+  </action>
+  <action name="selectTargets">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/red_square.png</normaloff>images/red_square.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select Targets</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="selectTracker">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/filled_square.png</normaloff>images/filled_square.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select Tracker</string>
+   </property>
+  </action>
+  <action name="loadImage">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/cam.jpg</normaloff>images/cam.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Load Image</string>
+   </property>
+  </action>
+  <action name="clearCam">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/clear.png</normaloff>images/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="saveResults">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/filled_square.png</normaloff>images/filled_square.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Results</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="images/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
