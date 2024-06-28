@@ -12,14 +12,17 @@ common object tracking algorithms, such as CSRT, KCF, TLD, Mosse etc.
 Following the comparative analysis of the algorithms, you can choose one that suites
 the case by performance and accuracy.
 
+The application supports single, as well as multiple objects tracking.
+
 
 # User Instructions
-* Select number of objects to track, tracker algorithm and FPS.
+* Select number of objects to track and tracker algorithm.
 * Select the objects to track in bounding boxes, using the first frame.
 * Play the processed video, to evaluate the efficiency of selected algorithm.
 * Additional Options:
     * Save the results (bounding boxes coordinates) to *.txt file.
     * Live camera recording, to create data for future processing.
+    * Configurable FPS for live camera recording.
 
 ![](https://github.com/DMTRBor/object_tracker/blob/master/demo.gif)
 
